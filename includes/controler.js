@@ -1,3 +1,5 @@
+import {vec2} from "./vec2.js";
+
 export class Controler{
     static wDown = false;
     static sDown = false;
@@ -11,7 +13,7 @@ export class Controler{
     static lArrow = false;
     static rArrow = false;
 
-    static main(){
+    static main(Window){
         window.addEventListener('keydown', function(e){
             Controler.wDown = e.keyCode == "87"?true:Controler.wDown;
             Controler.sDown = e.keyCode == "83"?true:Controler.sDown;
@@ -36,5 +38,37 @@ export class Controler{
             Controler.rArrow = e.keyCode == "39"?false:Controler.rArrow;
             Controler.lArrow = e.keyCode == "37"?false:Controler.lArrow;
         });
+        window.addEventListener('mousemove', function (e) {
+            let p = Window.positionUnFix(new vec2(e.clientX,e.clientY));
+            Cursor.info.position.x = p.x;
+            Cursor.info.position.y = p.y;
+        });
+        window.addEventListener('mousedown', function (e) {
+            if (e.button === 0) {
+                Cursor.info.lclick = true;
+            }
+            if (e.button === 2) {                
+                Cursor.info.rclick = true;
+            }
+        });
+        window.addEventListener('mouseup', function (e) {
+            if (e.button === 0) {
+                Cursor.info.lclick = false;
+            }
+            if (e.button === 2) {                
+                Cursor.info.rclick = false;
+            }
+        });
     }
+};
+
+export class Cursor{
+    static info = {
+        sprite:"../ico.png",
+        position: new vec2(0,0),
+        size: new vec2(16,16),
+        
+        rclick: false,
+        lclick: false
+    };
 };

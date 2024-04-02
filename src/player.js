@@ -6,6 +6,8 @@ export class Player{
 
 	static async main(){
 		await Player.load();
+		Player.info.position = new vec2(Player.info.position.x,Player.info.position.y);
+		Player.info.size = new vec2(Player.info.size.x,Player.info.size.y);
 	}
 
 	static load = async () => Player.info = await json.read("../mem/player.json");
@@ -18,14 +20,12 @@ export class Player{
 		body: JSON.stringify({data:Player.info,src:"./mem/player.json"})
 	});
 
-	static move(Controler){
-		if(Controler.wDown)
-			Player.info.position.y++;
-		if(Controler.sDown)
-			Player.info.position.y--;
-		if(Controler.aDown)
-			Player.info.position.x--;
-		if(Controler.dDown)
-			Player.info.position.x++;
+	static move(Controler, Cursor){
+		if(Cursor.info.lclick){
+			let dir = Cursor.info.position.addv(Player.info.position.product(-1)).unit();
+			Player.info.position.x += dir.x*Player.info.speed;
+			Player.info.position.y += dir.y*Player.info.speed;
+		}
+		//console.log(Player.info.position)
 	}
 };
