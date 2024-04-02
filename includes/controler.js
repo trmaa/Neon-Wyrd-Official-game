@@ -64,7 +64,7 @@ export class Controler{
 
 export class Cursor{
     static info = {
-        sprite:"../ico.png",
+        sprite:"../img/cursor.png",
         position: new vec2(0,0),
         size: new vec2(16,16),
         

@@ -17,7 +17,10 @@ export class vec2{
 
     unit(){
         let d = this.modul();
-        return this.product(1/d);
+        if(d!=0)
+            return this.product(1/d);
+        else
+            return new vec2(0,0);
     }
 
     addv(vector) {
