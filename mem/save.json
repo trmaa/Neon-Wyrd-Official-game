@@ -1,0 +1,26 @@
+{
+	"name": "",
+	"kills": 0,
+	"illness": 0,
+	"habilities": {
+		"hit": {
+			"name":"hit",
+			"key": "click",
+			"damage": 0.1,
+			"cooldown": 100
+		},
+		"arrow": {
+			"name":"arrow",
+			"key": "q",
+			"damage": 0.3,
+			"cooldown": 1000
+		},
+		"roll": {
+			"name":"roll",
+			"key": "space",
+			"damage": 0,
+			"cooldown": 1000
+		}
+	},
+	"room": 0
+}
