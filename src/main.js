@@ -1,15 +1,17 @@
 import { Window } from "../includes/window.js";
+import { Controler } from "../includes/controler.js";
 import { Player } from "./player.js";
+import { Renderer } from "./renderer.js";
 
 class Main{
 	static async main(){
 		Window.main();
+		Controler.main();
 		await Player.main();
-
-		Window.printext("#FF204E","Neo(n) Wyrd: Eldritchness of the Crimson Blaze",{x:0,y:20});
 	}
 	static update(){
-		Window.printimg("../ico.png",{x:0,y:20},{x:64,y:64});
+		Renderer.render(Window,[Player.info]);
+		Player.move(Controler);
 	}
 };
 
