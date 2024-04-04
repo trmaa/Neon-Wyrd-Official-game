@@ -2,34 +2,40 @@
   "name": "",
   "kills": 0,
   "illness": 0,
-  "habilities": {
-    "hit": {
+  "habilities": [
+    {
       "name": "hit",
       "key": "click",
       "damage": 0.1,
       "cooldown": 100
     },
-    "arrow": {
+    {
       "name": "arrow",
       "key": "q",
       "damage": 0.3,
       "cooldown": 1000
     },
-    "roll": {
+    {
       "name": "roll",
       "key": "space",
       "damage": 0,
       "cooldown": 1000
     }
+  ],
+  "aceleration": 0.2,
+  "friction": 0.95,
+  "maxv": 2,
+  "minv": 0.1,
+  "velocity": 0,
+  "direction": {
+    "x": 0,
+    "y": 0
   },
-  "aceleration":0.2,
-  "friction":0.95,
-  "maxv":2,
-  "minv":0.1,
-  "velocity":0,
-  "direction":{"x":0,"y":0},
-  "targuet":{"x":0,"y":0},
-      "targuet_sprite":"../img/oculto.png",
+  "targuet": {
+    "x": 0,
+    "y": 200
+  },
+  "targuet_sprite": "../img/oculto.png",
   "room": 0,
   "position": {
     "x": 0,
@@ -40,12 +46,20 @@
     "y": 64
   },
   "sprite": "../img/player/idle_0.png",
-  "animation":"idle",
-  "animations":{
-    "idle":{"frames":[
-      "../img/player/idle_0.png","../img/player/idle_0.png","../img/player/idle_0.png",
-      "../img/player/idle_1.png","../img/player/idle_1.png",
-      "../img/player/idle_2.png","../img/player/idle_2.png","../img/player/idle_2.png"
-    ],"duration":0.01}
+  "animation": "idle",
+  "animations": {
+    "idle": {
+      "frames": [
+        "../img/player/idle_0.png",
+        "../img/player/idle_0.png",
+        "../img/player/idle_0.png",
+        "../img/player/idle_1.png",
+        "../img/player/idle_1.png",
+        "../img/player/idle_2.png",
+        "../img/player/idle_2.png",
+        "../img/player/idle_2.png"
+      ],
+      "duration": 0.01
+    }
   }
 }
