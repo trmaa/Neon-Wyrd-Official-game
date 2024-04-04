@@ -41,7 +41,7 @@ export class Window {
 	}
 
     static cls(){
-        Window.print("#000",{x:0,y:0},Window.viewport);
+        Window.print("#055",new vec2(0,0),Window.viewport);
     }
 
     static center(p,o){

@@ -25,25 +25,38 @@ export class Player{
 	static move(Controler, Cursor, Window){
 		let curs = Cursor.info.position.addv(Window.viewport.product(-1/2)).addv(Player.info.position);
 		if(Cursor.info.lclick){
+			Player.info.targuet_sprite = "../img/oculto.png";
+
 			Player.info.targuet.x = curs.x;
 			Player.info.targuet.y = curs.y;
 
-			Player.info.velocity += Player.info.acceleration;
-
 			Player.info.direction = Player.info.targuet.addv(Player.info.position.product(-1)).unit();
+
+			Player.info.velocity += Player.info.aceleration;
+		} else {
+			Player.info.targuet_sprite = "../img/player/targuet.png";
 		}
 
-		Player.info.position.x += Player.info.direction.x*Player.info.velocity;
-		Player.info.position.y += Player.info.direction.y*Player.info.velocity;
-
-		Player.info.targuet.sprite = "../img/player/targuet.png";
+		Player.info.position = Player.info.position.addv(Player.info.direction.product(Player.info.velocity));
 
 		let lamda = (Player.info.targuet.x-Player.info.position.x)/Player.info.direction.x;
 		if(lamda<5){//para saver si está delante o detrás
-			Player.info.targuet.sprite = "../img/oculto.png";
-			Player.info.velocity = Player.info.velocity*Player.info.friction;
+			Player.info.targuet_sprite = "../img/oculto.png";
+			Player.info.velocity = Player.info.velocity * Player.info.friction;
 		}
 
-		Player.info.velocity = Player.info.velocity>Player.info.maxv?Player.info.maxv:Player.info.velocity;
+		if(Player.info.velocity > Player.info.maxv){
+			Player.info.velocity = Player.info.maxv;
+		} else if(Player.info.velocity < Player.info.minv){
+			Player.info.velocity = 0;
+		}
+	}
+
+	static animate(time){
+		let animation = Player.info.animations[Player.info.animation];
+		if(time*animation.duration == parseInt(time*animation.duration)){
+			let frame = time - parseInt(time/animation.frames.length)*animation.frames.length;
+			Player.info.sprite = animation.frames[frame];
+		}
 	}
 };

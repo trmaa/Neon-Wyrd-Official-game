@@ -5,15 +5,19 @@ import { Renderer } from "./renderer.js";
 import { vec2 } from "../includes/vec2.js";
 
 class Main{
+	static time = 0;
+
 	static async main(){
 		Window.main();
 		Controler.main(Window);
 		await Player.main();
 	}
+
 	static update(){
+		Main.time+=1;
 		Renderer.render(Window,[//relatives
 			{
-				sprite:Player.info.targuet.sprite,
+				sprite:Player.info.targuet_sprite,
 				position:Player.info.targuet,
 				size:new vec2(64,64)
 			},
@@ -23,6 +27,7 @@ class Main{
 		],Player.info.position);
 		
 		Player.move(Controler, Cursor, Window);
+		Player.animate(Main.time)
 	}
 };
 
