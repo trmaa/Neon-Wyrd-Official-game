@@ -73,7 +73,7 @@ export class Player{
 					Player.info.position.y>barrel[0].y && Player.info.position.y<barrel[1].y
 				){
 					Player.info.position = Player.info.position.addv(Player.info.direction.product(-Player.info.velocity*2));
-
+					console.log(e)
 				}
 			}
 		});

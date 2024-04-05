@@ -27,7 +27,7 @@ class Main{
 				sprite:Player.info.targuet_sprite,
 				position:Player.info.targuet,
 				size:new vec2(64,64),
-				colider:null,
+				colider:true,
 				margin: 0
 			},
 			Main.dummy.info,
