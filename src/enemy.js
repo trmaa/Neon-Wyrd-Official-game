@@ -8,7 +8,9 @@ export class Enemy{
 			habilities: habs,
 			sprite: src,
 			position: p,
-			size: s
+			size: s,
+			margin: 0,
+			flipped:false
 		}
 	}
 };

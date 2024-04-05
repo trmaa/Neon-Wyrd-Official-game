@@ -11,6 +11,8 @@ class Main{
 
 	static dummy = new Enemy("../ico.png", new vec2(0,0),new vec2(64,64), [new Hability("hit","-",0.1,500)]);
 
+	static entities;
+
 	static async main(){
 		Window.main();
 		Controler.main(Window);
@@ -19,20 +21,23 @@ class Main{
 
 	static update(){
 		Main.time+=1;
-		Renderer.render(Window,[//relatives
+
+		Main.entities = [
 			{
 				sprite:Player.info.targuet_sprite,
 				position:Player.info.targuet,
-				size:new vec2(64,64)
+				size:new vec2(64,64),
+				colider:null,
+				margin: 0
 			},
 			Main.dummy.info,
 			Player.info
-		],[						//statics
-			Cursor.info
-		],Player.info.position);
+		];
+
+		Renderer.render(Window,Main.entities,[Cursor.info],Player.info.position);
 		
-		Player.move(Controler, Cursor, Window);
-		Player.animate(Main.time)
+		Player.move(Controler, Cursor, Window, Main.entities);
+		Player.animate(Main.time);
 	}
 };
 

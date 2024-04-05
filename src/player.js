@@ -22,7 +22,7 @@ export class Player{
 		body: JSON.stringify({data:Player.info,src:"./mem/player.json"})
 	});
 
-	static move(Controler, Cursor, Window){
+	static move(Controler, Cursor, Window, entities){
 		let curs = Cursor.info.position.addv(Window.viewport.product(-1/2)).addv(Player.info.position);
 		if(Cursor.info.lclick){
 			Player.info.targuet_sprite = "../img/oculto.png";
@@ -50,6 +50,33 @@ export class Player{
 		} else if(Player.info.velocity < Player.info.minv){
 			Player.info.velocity = 0;
 		}
+
+		if(Player.info.direction.x >= 0){
+			Player.info.flipped = true;
+		} else {
+			Player.info.flipped = false;
+		}
+
+		Player.colide(entities);
+	}
+
+	static colide(entities){
+		entities.forEach(e=>{
+			if(!e.colider){
+				let barrel = [
+					e.position.add(e.margin),
+					e.size.add(-2*e.margin).productv(new vec2(1,1/2))
+				];
+				if(
+					Player.info.position.x+Player.info.colider>barrel[0].x && Player.info.position.x+Player.info.colider<barrel[1].x
+					&& 
+					Player.info.position.y>barrel[0].y && Player.info.position.y<barrel[1].y
+				){
+					Player.info.position = Player.info.position.addv(Player.info.direction.product(-Player.info.velocity*2));
+
+				}
+			}
+		});
 	}
 
 	static animate(time){

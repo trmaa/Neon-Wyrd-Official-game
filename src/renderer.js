@@ -9,7 +9,8 @@ export class Renderer{
 		entities.sort((a, b) => b.position.y - a.position.y);
 
 		entities.forEach(obj=>{
-			Window.printimg(obj.sprite,Window.center(obj.position,center),obj.size);
+			//Window.print("#ff0",Window.center(obj.position,center).add(obj.margin),obj.size.add(-2*obj.margin).productv(new vec2(1,1/2)));
+			Window.printimg(obj.sprite,Window.center(obj.position,center),obj.size,0,obj.flipped);
 		});
 
 		hdu.forEach(obj=>{

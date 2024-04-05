@@ -29,16 +29,24 @@ export class Window {
         Window.ctx.fillText(text, p.x*Window.resize, Window.cvs.height-p.y*Window.resize);
     }
 
-    static printimg(src,p,s,a=0){
+    static printimg(src, p, s, a = 0, flipHorizontal = false, flipVertical = false) {
         p = Window.positionFix(p);
-		let sprite = new Image();
-		sprite.src = src;
-  		Window.ctx.save();
-  		Window.ctx.translate(p.x-s.x*Window.resize/2, p.y+s.y*Window.resize/2);
-  		Window.ctx.rotate(a);
-  		Window.ctx.drawImage(sprite,0,0, s.x*Window.resize, -s.y*Window.resize);
-  		Window.ctx.restore();
-	}
+        let sprite = new Image();
+        sprite.src = src;
+        Window.ctx.save();
+        Window.ctx.translate(p.x, p.y);
+        Window.ctx.rotate(a);
+
+        if (flipHorizontal) {
+            //Window.ctx.scale(-1, 1);
+        }
+        if (flipVertical) {
+            //Window.ctx.scale(1, -1);
+        }
+
+        Window.ctx.drawImage(sprite, 0, 0, s.x * Window.resize, -s.y * Window.resize);
+        Window.ctx.restore();
+    }
 
     static cls(){
         Window.print("#055",new vec2(0,0),Window.viewport);

@@ -45,6 +45,9 @@
     "x": 64,
     "y": 64
   },
+  "colider": 32,
+  "margin":0,
+  "flipped":false,
   "sprite": "../img/player/idle_0.png",
   "animation": "idle",
   "animations": {
