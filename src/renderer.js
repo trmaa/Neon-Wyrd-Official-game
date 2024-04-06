@@ -4,7 +4,8 @@ export class Renderer{
 	static render(Window,entities,hdu,center,time){
 		Window.cls();
 		
-		Window.print("#077",Window.center(new vec2(0,0),center),new vec2(256,128));
+		Window.print("#077",Window.center(new vec2(-1000,0),center),new vec2(2000,32));
+		Window.print("#077",Window.center(new vec2(0,-1000),center),new vec2(32,2000));
 
 		entities.sort((a, b) => b.position.y - a.position.y);
 
@@ -22,7 +23,7 @@ export class Renderer{
 		});
 
 		hdu.forEach(obj=>{
-			Window.printimg(obj.sprite,obj.position.addv(obj.size.productv(new vec2(-1.5,-0.5))),obj.size);
+			Window.printimg(obj.sprite,obj.position.addv(obj.size.product(-0.5)),obj.size);
 		});
 	}
 };

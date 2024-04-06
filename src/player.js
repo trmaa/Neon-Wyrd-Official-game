@@ -9,7 +9,7 @@ export class Player{
 		Player.info.position = new vec2(Player.info.position.x,Player.info.position.y);
 		Player.info.size = new vec2(Player.info.size.x,Player.info.size.y);
 		Player.info.csize = new vec2(Player.info.csize.x,Player.info.csize.y);
-		Player.info.targuet = new vec2(Player.info.position.x,Player.info.position.y);
+		Player.info.targuet.position = new vec2(Player.info.position.x,Player.info.position.y);
 		Player.info.direction = new vec2(0,0);
 	}
 
@@ -26,23 +26,23 @@ export class Player{
 	static move(Controler, Cursor, Window, entities){
 		let curs = Cursor.position.addv(Window.viewport.product(-1/2)).addv(Player.info.position);
 		if(Cursor.lclick){
-			Player.info.targuet_sprite = "../img/hidden.png";
+			Player.info.targuet.animation = "hidden";
 
-			Player.info.targuet.x = curs.x;
-			Player.info.targuet.y = curs.y;
+			Player.info.targuet.position.x = curs.x;
+			Player.info.targuet.position.y = curs.y;
 
-			Player.info.direction = Player.info.targuet.addv(Player.info.position.product(-1)).unit();
+			Player.info.direction = Player.info.targuet.position.addv((Player.info.position).product(-1)).unit();
 
 			Player.info.velocity += Player.info.aceleration;
 		} else {
-			Player.info.targuet_sprite = "../img/player/targuet.png";
+			Player.info.targuet.animation = "shown";
 		}
 
 		Player.info.position = Player.info.position.addv(Player.info.direction.product(Player.info.velocity));
 
-		let lamda = (Player.info.targuet.x-Player.info.position.x)/Player.info.direction.x;
+		let lamda = (Player.info.targuet.position.x-Player.info.position.x)/Player.info.direction.x;
 		if(lamda<5){//para saver si está delante o detrás
-			Player.info.targuet_sprite = "../img/hidden.png";
+			Player.info.targuet.animation = "hidden";
 			Player.info.velocity = Player.info.velocity * Player.info.friction;
 		}
 

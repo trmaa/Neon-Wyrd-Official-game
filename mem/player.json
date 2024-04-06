@@ -32,10 +32,48 @@
     "y": 0
   },
   "targuet": {
-    "x": 0,
-    "y": 200
+    "position":{
+      "x": 0,
+      "y": 200
+    },
+    "sprite": "../img/player/targuet_0.png",
+    "animation": "hidden",
+    "animations": {
+      "hidden": {
+        "frames": [
+          "../img/hidden.png"
+        ],
+        "duration": 0.2
+      },
+      "shown": {
+        "frames": [
+            "../img/player/targuet_3.png",
+            "../img/player/targuet_3.png",
+            "../img/player/targuet_3.png",
+            "../img/player/targuet_2.png",
+            "../img/player/targuet_2.png",
+            "../img/player/targuet_2.png",
+            "../img/player/targuet_1.png",
+            "../img/player/targuet_1.png",
+            "../img/player/targuet_1.png",
+            "../img/player/targuet_0.png",
+            "../img/player/targuet_0.png",
+            "../img/player/targuet_0.png"
+        ],
+        "duration": 0.1
+      }
+    },
+    "size":{
+      "x": 32,
+      "y": 64
+    },
+    "csize":{
+      "x": 32,
+      "y": 64
+    },
+    "colisionless":true,
+    "margin": 0
   },
-  "targuet_sprite": "../img/hidden.png",
   "room": 0,
   "position": {
     "x": 0,

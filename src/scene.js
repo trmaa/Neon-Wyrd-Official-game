@@ -12,14 +12,7 @@ export class Scene{
 
 	static update(Player, Cursor){
 		Scene.entities = [
-			{
-				sprite:Player.info.targuet_sprite,
-				position:Player.info.targuet,
-				size:new vec2(32,64),
-				csize:new vec2(32,64),
-				colisionless:true,
-				margin: 0
-			},
+			Player.info.targuet,
 			Scene.dummy,
 			Scene.wall,
 			Player.info
