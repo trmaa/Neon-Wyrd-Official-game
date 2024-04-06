@@ -65,11 +65,11 @@
     },
     "size":{
       "x": 32,
-      "y": 64
+      "y": 32
     },
     "csize":{
       "x": 32,
-      "y": 64
+      "y": 32
     },
     "colisionless":true,
     "margin": 0

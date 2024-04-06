@@ -10,6 +10,8 @@ export class Player{
 		Player.info.size = new vec2(Player.info.size.x,Player.info.size.y);
 		Player.info.csize = new vec2(Player.info.csize.x,Player.info.csize.y);
 		Player.info.targuet.position = new vec2(Player.info.position.x,Player.info.position.y);
+		Player.info.targuet.size = new vec2(Player.info.targuet.size.x,Player.info.targuet.size.y);
+		Player.info.targuet.csize = new vec2(Player.info.targuet.csize.x,Player.info.targuet.csize.y);
 		Player.info.direction = new vec2(0,0);
 	}
 
@@ -74,7 +76,6 @@ export class Player{
 					Player.info.position.y>barrel[0].y && Player.info.position.y<barrel[1].y
 				){
 					Player.info.position = Player.info.position.addv(Player.info.direction.product(-Player.info.velocity*2));
-					console.log(e)
 				}
 			}
 		});
