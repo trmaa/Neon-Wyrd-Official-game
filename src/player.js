@@ -25,7 +25,7 @@ export class Player{
 	static move(Controler, Cursor, Window, entities){
 		let curs = Cursor.info.position.addv(Window.viewport.product(-1/2)).addv(Player.info.position);
 		if(Cursor.info.lclick){
-			Player.info.targuet_sprite = "../img/oculto.png";
+			Player.info.targuet_sprite = "../img/hidden.png";
 
 			Player.info.targuet.x = curs.x;
 			Player.info.targuet.y = curs.y;
@@ -41,7 +41,7 @@ export class Player{
 
 		let lamda = (Player.info.targuet.x-Player.info.position.x)/Player.info.direction.x;
 		if(lamda<5){//para saver si está delante o detrás
-			Player.info.targuet_sprite = "../img/oculto.png";
+			Player.info.targuet_sprite = "../img/hidden.png";
 			Player.info.velocity = Player.info.velocity * Player.info.friction;
 		}
 
@@ -77,13 +77,5 @@ export class Player{
 				}
 			}
 		});
-	}
-
-	static animate(time){
-		let animation = Player.info.animations[Player.info.animation];
-		if(time*animation.duration == parseInt(time*animation.duration)){
-			let frame = time - parseInt(time/animation.frames.length)*animation.frames.length;
-			Player.info.sprite = animation.frames[frame];
-		}
 	}
 };

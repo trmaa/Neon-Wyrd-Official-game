@@ -66,7 +66,7 @@ export class Cursor{
     static info = {
         sprite:"../img/cursor.png",
         position: new vec2(0,0),
-        size: new vec2(16,16),
+        size: new vec2(16,64),
         
         rclick: false,
         lclick: false

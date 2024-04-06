@@ -34,7 +34,7 @@ export class Window {
         let sprite = new Image();
         sprite.src = src;
         Window.ctx.save();
-        Window.ctx.translate(p.x, p.y);
+        Window.ctx.translate(p.x-s.x*Window.resize*0.5, p.y+s.y*Window.resize*0.5);
         Window.ctx.rotate(a);
 
         if (flipHorizontal) {

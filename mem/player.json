@@ -22,8 +22,8 @@
       "cooldown": 1000
     }
   ],
-  "aceleration": 0.2,
-  "friction": 0.95,
+  "aceleration": 0.5,
+  "friction": 0.9,
   "maxv": 2,
   "minv": 0.1,
   "velocity": 0,
@@ -35,7 +35,7 @@
     "x": 0,
     "y": 200
   },
-  "targuet_sprite": "../img/oculto.png",
+  "targuet_sprite": "../img/hidden.png",
   "room": 0,
   "position": {
     "x": 0,
