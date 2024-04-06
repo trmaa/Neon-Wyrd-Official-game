@@ -8,6 +8,7 @@ export class Player{
 		await Player.load();
 		Player.info.position = new vec2(Player.info.position.x,Player.info.position.y);
 		Player.info.size = new vec2(Player.info.size.x,Player.info.size.y);
+		Player.info.csize = new vec2(Player.info.csize.x,Player.info.csize.y);
 		Player.info.targuet = new vec2(Player.info.position.x,Player.info.position.y);
 		Player.info.direction = new vec2(0,0);
 	}
@@ -62,10 +63,10 @@ export class Player{
 
 	static colide(entities){
 		entities.forEach(e=>{
-			if(!e.colider){
+			if(!e.colisionless){
 				let barrel = [
 					e.position.add(e.margin),
-					e.size.add(-2*e.margin).productv(new vec2(1,1/2))
+					e.csize.add(-2*e.margin)
 				];
 				if(
 					Player.info.position.x+Player.info.colider>barrel[0].x && Player.info.position.x+Player.info.colider<barrel[1].x

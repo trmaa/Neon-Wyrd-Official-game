@@ -1,5 +1,6 @@
 import { vec2 } from "../includes/vec2.js";
 import { Hability } from "./hability.js";
+import { Wall } from "./wall.js";
 import { Enemy } from "./enemy.js";
 
 export class Scene{
@@ -14,10 +15,12 @@ export class Scene{
 				sprite:Player.info.targuet_sprite,
 				position:Player.info.targuet,
 				size:new vec2(32,64),
-				colider:true,
+				csize:new vec2(32,64),
+				colisionless:true,
 				margin: 0
 			},
 			Scene.dummy,
+			new Wall(new vec2(100,100),new vec2(100,100)),
 			Player.info
 		];
 

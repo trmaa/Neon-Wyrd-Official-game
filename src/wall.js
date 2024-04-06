@@ -1,4 +1,16 @@
+import { vec2 } from "../includes/vec2.js";
+
 export class Wall{
-	static position;
-	static size;
+	sprite = "../img/untextured.png";
+	position;
+	size;
+	csize;
+	colisionless = false;
+	margin = 0;
+
+	constructor(p,s){
+		this.position = p;
+		this.size = s;
+		this.csize = s;
+	}
 };

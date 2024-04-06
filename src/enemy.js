@@ -5,6 +5,7 @@ export class Enemy{
 	sprite;
 	position;
 	size;
+	csize;
 	margin;
 	flipped;
 
@@ -13,6 +14,7 @@ export class Enemy{
 		this.sprite = src;
 		this.position = p;
 		this.size = s;
+		this.csize = s.productv(new vec2(1,1/2));
 		this.margin = 0;
 		this.flipped = false;
 	}

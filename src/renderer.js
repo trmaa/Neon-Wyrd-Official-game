@@ -9,8 +9,6 @@ export class Renderer{
 		entities.sort((a, b) => b.position.y - a.position.y);
 
 		entities.forEach(obj=>{
-			//to show the colider:
-			//	Window.print("#ff0",Window.center(obj.position,center).add(obj.margin),obj.size.add(-2*obj.margin).productv(new vec2(1,1/2)));
 			if(obj.animations){
 				let animation = obj.animations[obj.animation];
 				if(time*animation.duration == parseInt(time*animation.duration)){
@@ -19,6 +17,8 @@ export class Renderer{
 				}
 			}
 			Window.printimg(obj.sprite,Window.center(obj.position,center),obj.size,0,obj.flipped);
+			//to show the colider:
+			Window.print("#ff07",Window.center(obj.position,center).addv(obj.size.product(-0.5)).add(obj.margin),obj.csize.add(-2*obj.margin));
 		});
 
 		hdu.forEach(obj=>{
