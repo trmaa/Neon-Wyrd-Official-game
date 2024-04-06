@@ -17,10 +17,10 @@ export class Scene{
 				colider:true,
 				margin: 0
 			},
-			Scene.dummy.info,
+			Scene.dummy,
 			Player.info
 		];
 
-		Scene.UI = [Cursor.info];
+		Scene.UI = [Cursor];
 	}
 };

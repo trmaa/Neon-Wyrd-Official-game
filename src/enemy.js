@@ -1,16 +1,19 @@
 import { vec2 } from "../includes/vec2.js";
 
 export class Enemy{
-	info;
+	habilities;
+	sprite;
+	position;
+	size;
+	margin;
+	flipped;
 
 	constructor(src,p,s,habs){
-		this.info = {
-			habilities: habs,
-			sprite: src,
-			position: p,
-			size: s,
-			margin: 0,
-			flipped:false
-		}
+		this.habilities = habs;
+		this.sprite = src;
+		this.position = p;
+		this.size = s;
+		this.margin = 0;
+		this.flipped = false;
 	}
 };

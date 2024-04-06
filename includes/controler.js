@@ -40,35 +40,33 @@ export class Controler{
         });
         window.addEventListener('mousemove', function (e) {
             let p = Window.positionUnFix(new vec2(e.clientX,e.clientY));
-            Cursor.info.position.x = p.x;
-            Cursor.info.position.y = p.y;
+            Cursor.position.x = p.x;
+            Cursor.position.y = p.y;
         });
         window.addEventListener('mousedown', function (e) {
             if (e.button === 0) {
-                Cursor.info.lclick = true;
+                Cursor.lclick = true;
             }
             if (e.button === 2) {                
-                Cursor.info.rclick = true;
+                Cursor.rclick = true;
             }
         });
         window.addEventListener('mouseup', function (e) {
             if (e.button === 0) {
-                Cursor.info.lclick = false;
+                Cursor.lclick = false;
             }
             if (e.button === 2) {                
-                Cursor.info.rclick = false;
+                Cursor.rclick = false;
             }
         });
     }
 };
 
 export class Cursor{
-    static info = {
-        sprite:"../img/cursor.png",
-        position: new vec2(0,0),
-        size: new vec2(16,64),
-        
-        rclick: false,
-        lclick: false
-    };
+    static sprite = "../img/cursor.png";
+    static position = new vec2(0,0);
+    static size = new vec2(16,64);
+    
+    static rclick = false;
+    static lclick = false;
 };

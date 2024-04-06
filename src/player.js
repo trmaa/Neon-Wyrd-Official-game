@@ -23,8 +23,8 @@ export class Player{
 	});
 
 	static move(Controler, Cursor, Window, entities){
-		let curs = Cursor.info.position.addv(Window.viewport.product(-1/2)).addv(Player.info.position);
-		if(Cursor.info.lclick){
+		let curs = Cursor.position.addv(Window.viewport.product(-1/2)).addv(Player.info.position);
+		if(Cursor.lclick){
 			Player.info.targuet_sprite = "../img/hidden.png";
 
 			Player.info.targuet.x = curs.x;
