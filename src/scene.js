@@ -8,6 +8,7 @@ export class Scene{
 
 	static entities;
 	static UI;
+	static wall = new Wall(new vec2(300,300),new vec2(200,200));
 
 	static update(Player, Cursor){
 		Scene.entities = [
@@ -20,7 +21,7 @@ export class Scene{
 				margin: 0
 			},
 			Scene.dummy,
-			new Wall(new vec2(100,100),new vec2(100,100)),
+			Scene.wall,
 			Player.info
 		];
 

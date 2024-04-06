@@ -18,11 +18,11 @@ export class Renderer{
 			}
 			Window.printimg(obj.sprite,Window.center(obj.position,center),obj.size,0,obj.flipped);
 			//to show the colider:
-			Window.print("#ff07",Window.center(obj.position,center).addv(obj.size.product(-0.5)).add(obj.margin),obj.csize.add(-2*obj.margin));
+			// Window.print("#ff07",Window.center(obj.position,center).add(obj.margin),obj.csize.add(-2*obj.margin));
 		});
 
 		hdu.forEach(obj=>{
-			Window.printimg(obj.sprite,obj.position,obj.size);
+			Window.printimg(obj.sprite,obj.position.addv(obj.size.productv(new vec2(-1.5,-0.5))),obj.size);
 		});
 	}
 };

@@ -19,7 +19,7 @@ class Main{
 		Main.time+=1;
 
 		Scene.update(Player, Cursor);
-		Renderer.render(Window,Scene.entities,Scene.UI,Player.info.position,Main.time);
+		Renderer.render(Window,Scene.entities,Scene.UI,Player.info.position.addv(Player.info.size.product(0.5)),Main.time);
 		
 		Player.move(Controler, Cursor, Window, Scene.entities);
 	}

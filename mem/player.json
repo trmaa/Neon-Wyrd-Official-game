@@ -62,9 +62,7 @@
         "../img/player/idle_0.png",
         "../img/player/idle_1.png",
         "../img/player/idle_1.png",
-        "../img/player/idle_2.png",
-        "../img/player/idle_2.png",
-        "../img/player/idle_2.png"
+        "../img/player/idle_1.png"
       ],
       "duration": 0.01
     }
