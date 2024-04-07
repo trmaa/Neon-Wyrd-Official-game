@@ -4,8 +4,8 @@ export class Renderer{
 	static render(Window,entities,hdu,center,time){
 		Window.cls();
 		
-		Window.print("#077",Window.center(new vec2(-1000,0),center),new vec2(2000,32));
-		Window.print("#077",Window.center(new vec2(0,-1000),center),new vec2(32,2000));
+		Window.print("#077",Window.center(new vec2(-1000,0),center),new vec2(2000,128));
+		Window.print("#077",Window.center(new vec2(0,-1000),center),new vec2(128,2000));
 
 		entities.sort((a, b) => b.position.y - a.position.y);
 
@@ -19,7 +19,7 @@ export class Renderer{
 			}
 			Window.printimg(obj.sprite,Window.center(obj.position,center),obj.size,0,obj.flipped);
 			//to show the colider:
-			Window.print("#ff07",Window.center(obj.position,center).add(obj.margin),obj.csize.add(-2*obj.margin));
+			// Window.print("#ff07",Window.center(obj.position,center).add(obj.margin),obj.csize.add(-2*obj.margin));
 		});
 
 		hdu.forEach(obj=>{
