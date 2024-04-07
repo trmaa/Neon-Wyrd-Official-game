@@ -68,7 +68,7 @@ export class Player{
 			if(!e.colisionless){
 				let barrel = [
 					e.position.add(e.margin),
-					e.csize.add(-2*e.margin)
+					e.position.add(e.margin).addv(e.csize.add(-2*e.margin))
 				];
 				if(
 					Player.info.position.x+Player.info.colider>barrel[0].x && Player.info.position.x+Player.info.colider<barrel[1].x

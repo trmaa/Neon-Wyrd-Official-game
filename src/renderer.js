@@ -19,7 +19,7 @@ export class Renderer{
 			}
 			Window.printimg(obj.sprite,Window.center(obj.position,center),obj.size,0,obj.flipped);
 			//to show the colider:
-			// Window.print("#ff07",Window.center(obj.position,center).add(obj.margin),obj.csize.add(-2*obj.margin));
+			Window.print("#ff07",Window.center(obj.position,center).add(obj.margin),obj.csize.add(-2*obj.margin));
 		});
 
 		hdu.forEach(obj=>{

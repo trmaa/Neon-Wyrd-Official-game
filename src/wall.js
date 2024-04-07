@@ -1,7 +1,7 @@
 import { vec2 } from "../includes/vec2.js";
 
 export class Wall{
-	sprite = "../img/untextured.png";
+	sprite = "../img/hidden.png";
 	position;
 	size;
 	csize;
